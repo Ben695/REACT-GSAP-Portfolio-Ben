@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "composite": true,
+    "skipLibCheck": true,
+    "module": "CommonJS", // Plus adapté pour les fichiers de configuration Node.js
+    "moduleResolution": "node", // Correction pour une meilleure résolution de module
+    "allowSyntheticDefaultImports": true,
+    "strict": true
+  },
+  "include": ["vite.config.ts"]
+}

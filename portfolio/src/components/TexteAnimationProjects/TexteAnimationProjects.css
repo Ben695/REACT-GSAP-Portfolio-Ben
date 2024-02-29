@@ -1,0 +1,14 @@
+.texte-animation-projects {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.texte-animation-projects p {
+  font-size: 70px;
+  margin: 0;
+  padding: 20px;
+  background-color: #ffffff;
+  display: inline-block;
+  font-family: "Henny Penny", cursive;
+  color: black;
+}/*# sourceMappingURL=TexteAnimationProjects.css.map */

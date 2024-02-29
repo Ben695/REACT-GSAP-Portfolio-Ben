@@ -1,0 +1,15 @@
+.hover-container {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.hover-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transform: scale(1);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  z-index: 999;
+}/*# sourceMappingURL=HoverImageAnimation.css.map */
