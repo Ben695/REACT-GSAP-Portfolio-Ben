@@ -14,7 +14,7 @@ const TexteAnimationProjects: React.FC<TexteAnimationProjectsProps> = ({ texte, 
   useEffect(() => {
     // Définir la position initiale du texte en fonction de la direction
     if (textRef.current) {
-      const initialX = direction === 'left' ? -4000 : 0; // Démarre plus loin sur la gauche ou la droite
+      const initialX = direction === 'left' ? -6000 : 0; // Démarre plus loin sur la gauche ou la droite
       gsap.set(textRef.current, { x: initialX });
     }
 
