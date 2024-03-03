@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import carImage from '@/assets/images/auto.png';
 
 const AutoAnimation: React.FC = () => {
@@ -16,9 +16,9 @@ const AutoAnimation: React.FC = () => {
     };
   }, []);
 
-  const newPosition = scrollPosition * 1.5; 
+  const newPosition = scrollPosition * 1.9; 
 
-  return <img src={carImage} className="auto-image" style={{ left: newPosition }} alt="Car" />;
+  return <img src={carImage} className="auto-image"  data-cursor-color="white" style={{ left: newPosition }} alt="Car" />;
 };
 
 export default AutoAnimation;

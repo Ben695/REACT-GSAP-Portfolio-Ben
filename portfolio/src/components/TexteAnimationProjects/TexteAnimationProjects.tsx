@@ -14,14 +14,14 @@ const TexteAnimationProjects: React.FC<TexteAnimationProjectsProps> = ({ texte, 
   useEffect(() => {
     // Définir la position initiale du texte en fonction de la direction
     if (textRef.current) {
-      const initialX = direction === 'left' ? -500 : 500; // Démarre plus loin sur la gauche ou la droite
+      const initialX = direction === 'left' ? -4000 : 0; // Démarre plus loin sur la gauche ou la droite
       gsap.set(textRef.current, { x: initialX });
     }
 
     const handleScroll = () => {
       const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
       const scrollDirection = currentScroll > lastScrollTop ? 'down' : 'up';
-      let xValue = 0;
+      let xValue = '';
 
       if (direction === 'right') {
         xValue = scrollDirection === 'down' ? '-=50' : '+=50';

@@ -4,6 +4,12 @@ body {
   margin: 0;
   padding: 0;
   cursor: none;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+}
+
+a:hover {
+  cursor: none;
 }
 
 *,
@@ -31,4 +37,12 @@ html, body {
 ::-moz-selection {
   background-color: black;
   color: white;
+}
+
+html {
+  scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }/*# sourceMappingURL=index.css.map */

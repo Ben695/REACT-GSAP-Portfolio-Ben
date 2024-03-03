@@ -1,8 +1,18 @@
 .container-scroller {
   overflow: hidden;
   width: 100vw;
+  height: 670px;
+  position: relative;
+  background-image: url("@/assets/images/projects.webp");
+  background-size: cover;
+  animation: scrollImage 60s linear infinite;
 }
 
-.image-scroller {
-  width: 6400px;
-}/*# sourceMappingURL=ImageScroller.css.map */
+@keyframes scrollImage {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -3200px 0;
+  }
+}/*# sourceMappingURL=imageScroller.css.map */

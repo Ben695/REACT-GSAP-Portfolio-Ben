@@ -1,0 +1,76 @@
+// LeftProjects.sass
+.container-projects-left
+    display: flex
+    background-color: black
+    color: white
+    justify-content: center
+    align-items: center
+    padding: 50px
+    width: 100vw
+    position: relative
+    @media (max-width: 920px)
+        flex-direction: column
+    .left-svg
+        position: absolute
+        top: -1%
+        right: 1%
+    .imageWrapper
+        flex: 1
+        padding: 10px
+        background-color: black
+        background-image: url('/assets/images/project-bg-left.png')
+        background-size: contain
+        background-repeat: no-repeat
+        img
+            width: 100%
+            max-width: 600px
+            height: auto
+
+.contentWrapper
+    flex: 1
+    padding: 10px
+    h2
+        font-family: "Hi Melody", cursive
+        font-size: 77px
+        line-height: 0
+        @media (max-width: 920px)
+            font-size: 36px
+    p
+        font-size: 28px
+        font-family: "Hi Melody", cursive
+        @media (max-width: 920px)
+            font-size: 16px
+.button-55
+    align-self: center
+    background-color: #fff
+    background-image: none
+    background-position: 0 90%
+    background-repeat: repeat no-repeat
+    background-size: 4px 3px
+    border-radius: 15px 225px 255px 15px / 15px 255px 225px 15px
+    border-style: solid
+    border-width: 2px
+    box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px
+    box-sizing: border-box
+    color: #41403e
+    cursor: pointer
+    display: inline-block
+    font-family: "Hi Melody", cursive
+    font-size: 26px
+    line-height: 23px
+    outline: none
+    padding: .75rem
+    text-decoration: none
+    transition: all 235ms ease-in-out
+    user-select: none
+    -webkit-user-select: none
+    touch-action: manipulation
+    @media (max-width: 920px)
+        font-size: 14px
+
+    &:hover
+        box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px
+        transform: translate3d(0, 2px, 0)
+
+    &:focus
+        box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px

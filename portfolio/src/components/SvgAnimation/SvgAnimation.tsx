@@ -14,6 +14,7 @@ const SvgAnimation: React.FC = () => {
         xmlSpace="preserve"
         width="471.5"
         className='svg-anime'
+        data-cursor-color="white"
       >
         <path
     d="M5,8.5c0,0,52.5,3.4,71,3.8c18.6,0.4,102.1,3.6,119.5,3.8c17.4,0.2,119.6,1.7,140.2,1.7

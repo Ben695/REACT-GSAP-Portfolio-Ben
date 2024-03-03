@@ -12,6 +12,11 @@
   align-items: center;
   justify-content: center;
 }
+@media (max-width: 920px) {
+  .profile-content {
+    flex-direction: column;
+  }
+}
 
 .profile-image {
   width: 40%;
@@ -19,9 +24,19 @@
   max-width: 100%;
   height: auto;
 }
+@media (max-width: 920px) {
+  .profile-image {
+    width: 80%;
+  }
+}
 
 .profile-text {
   width: 40%;
+}
+@media (max-width: 920px) {
+  .profile-text {
+    width: 80%;
+  }
 }
 .profile-text h2 {
   font-size: 96px;
@@ -31,6 +46,11 @@
   padding: 0;
   line-height: 0.5;
 }
+@media (max-width: 920px) {
+  .profile-text h2 {
+    font-size: 50px;
+  }
+}
 .profile-text h3 {
   font-size: 96px;
   font-family: "IBM Plex Sans", sans-serif;
@@ -38,9 +58,19 @@
   margin: 0;
   padding: 0;
 }
+@media (max-width: 920px) {
+  .profile-text h3 {
+    font-size: 50px;
+  }
+}
 .profile-text p {
-  font-size: 24px;
-  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 36px;
+  font-family: "Hi Melody", cursive;
+}
+@media (max-width: 920px) {
+  .profile-text p {
+    font-size: 16px;
+  }
 }
 
 .hero-title .chapeau-image {

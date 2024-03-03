@@ -29,8 +29,20 @@ const Preloader: React.FC<PreloaderProps> = ({ isLoading }) => {
     backgroundColor: 'rgba(255, 255, 255, 0.9)', 
   };
 
+  // Styles pour la div transparente de blocage
+  const blockingLayerStyles: React.CSSProperties = {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '100%',
+    zIndex: 10000, // Plus élevé que le reste pour empêcher les clics
+    cursor: 'wait', // Optionnel, change le curseur pour indiquer l'attente
+  };
+
   return (
     <div style={isLoading ? containerStyles : { display: 'none' }}>
+      <div style={blockingLayerStyles}></div> {/* Div transparente de blocage */}
       <Lottie options={defaultOptions} height={400} width={400} />
     </div>
   );

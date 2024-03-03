@@ -3,15 +3,20 @@
     flex-direction: column
     align-items: center
     justify-content: center
-    padding-top: 100px
+    padding-top: 170px
     padding-bottom: 150px
     box-sizing: border-box
     width: 100%
     position: relative
+    @media (max-width: 920px)
+        padding-top: 100px
+        padding-bottom: 100px
 .auto-image
     position: absolute
     bottom: 0
     left: 0
+    @media (max-width: 920px)
+        height: 10%
 .hero-title
     position: relative
     & p
@@ -19,6 +24,8 @@
         font-size: 80px
         font-family: 'Outfit', sans-serif
         font-weight: 500
+        @media (max-width: 920px)
+            font-size: 35px
         & span
             font-family: 'IBM Plex Sans', sans-serif
             font-weight: 400
@@ -27,3 +34,7 @@
         top: -70%
         right: 10%
         height: 80%
+        @media (max-width: 920px)
+            height: 40%
+            top: -20%
+            right: 25%

@@ -3,17 +3,28 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-top: 100px;
+  padding-top: 170px;
   padding-bottom: 150px;
   box-sizing: border-box;
   width: 100%;
   position: relative;
+}
+@media (max-width: 920px) {
+  .name-display {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
 }
 
 .auto-image {
   position: absolute;
   bottom: 0;
   left: 0;
+}
+@media (max-width: 920px) {
+  .auto-image {
+    height: 10%;
+  }
 }
 
 .hero-title {
@@ -25,6 +36,11 @@
   font-family: "Outfit", sans-serif;
   font-weight: 500;
 }
+@media (max-width: 920px) {
+  .hero-title p {
+    font-size: 35px;
+  }
+}
 .hero-title p span {
   font-family: "IBM Plex Sans", sans-serif;
   font-weight: 400;
@@ -34,4 +50,11 @@
   top: -70%;
   right: 10%;
   height: 80%;
-}/*# sourceMappingURL=Hero.css.map */
+}
+@media (max-width: 920px) {
+  .hero-title .chapeau-image {
+    height: 40%;
+    top: -20%;
+    right: 25%;
+  }
+}/*# sourceMappingURL=hero.css.map */

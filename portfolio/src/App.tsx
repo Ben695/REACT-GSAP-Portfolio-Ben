@@ -1,34 +1,38 @@
 import { useState, useEffect } from 'react';
 import { gsap } from 'gsap';
-import './App.css';
+import './App.sass';
+import '@/assets/fonts/fonts.css';
 import Header from './components/Header/Header';
 import Hero from './components/Hero/Hero';
 import Profile from './components/Profile/Profile';
-import TexteAnimationProjects from './components/TexteAnimationProjects/TexteAnimationProjects';
 import ImageScroller from './components/ImageScroller/ImageScroller';
 import CustomCursor from './components/CustomCursor/CustomCursor';
 import Preloader from './components/Preloader/Preloader';
+import ProgressBar from './components/ProgressBar/ProgressBar';
+import ProjectsReact from './components/Projects/ProjectsReact';
+import TexteAnimationProjects from '@/components/TexteAnimationProjects/TexteAnimationProjects';
+import ProjectsJavascript from './components/Projects/ProjectsJavascript';
+import Footer from './components/Footer/Footer';
+import ProjectsWordpress from './components/Projects/ProjectsWordpress';
+
 
 const App: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Simule le chargement de ressources ou attendez que votre contenu soit prêt
-    // Vous pouvez remplacer cette logique par un vrai test de chargement si nécessaire
-    setTimeout(() => {
-      setIsLoading(false); // Cache le preloader une fois le chargement terminé
-    }, 2000);
+    // Simuler le chargement des ressources
+    setTimeout(() => setIsLoading(false), 2000);
   }, []);
 
   useEffect(() => {
     if (!isLoading) {
-      // Animation GSAP
-      const tl = gsap.timeline();
-      tl.from(".Header-anim", { duration: 0.8, y: 30, opacity: 0, ease: "power3.out" })
-        .from(".Hero-anim", { duration: 0.8, y: 30, opacity: 0, ease: "power3.out" }, "-=0.6")
-        .from(".Profile-anim", { duration: 0.8, y: 30, opacity: 0, ease: "power3.out" }, "-=0.6")
-        .from(".TexteAnimationProjects-anim", { duration: 0.8, y: 30, opacity: 0, ease: "power3.out" }, "-=0.6")
-        .from(".ImageScroller-anim", { duration: 0.8, y: 30, opacity: 0, ease: "power3.out" }, "-=0.6");
+      // Animer chaque élément séparément en utilisant ses classes spécifiques
+      gsap.fromTo('.header-anim', 
+                  { y: -30, autoAlpha: 0 }, 
+                  { y: 0, autoAlpha: 1, duration: 1, ease: 'power3.out' });
+      gsap.fromTo('.hero-anim', 
+                  { y: -30, autoAlpha: 0 }, 
+                  { y: 0, autoAlpha: 1, duration: 1, ease: 'power3.out', delay: 0.2 });
     }
   }, [isLoading]);
 
@@ -37,14 +41,19 @@ const App: React.FC = () => {
       <Preloader isLoading={isLoading} />
       {!isLoading && (
         <div className="App">
-          <div className="Header-anim"><Header /></div>
-          <div className="Hero-anim"><Hero /></div>
-          <div className="Profile-anim"><Profile /></div>
-          <div className="TexteAnimationProjects-anim">
-            <TexteAnimationProjects texte="Project with React | Project with React | Project with React | Project with React | " direction="right" />
-          </div>
-          <div className="ImageScroller-anim"><ImageScroller /></div>
+          <ProgressBar />
           <CustomCursor />
+          <Header />
+          <Hero />
+          <Profile />
+          <ImageScroller />
+          <TexteAnimationProjects texte="Project with React | Project with React | Project with React | Project with React | Project with React | Project with React | Project with React | Project with React | Project with React | Project with React | Project with React | Project with React | Project with React | Project with React | Project with React | Project with React | Project with React | Project with React | Project with React | Project with React |" direction="left" />
+          <ProjectsReact />
+          <TexteAnimationProjects texte="Project with Javascript | Project with Javascript | Project with Javascript | Project with Javascript | Project with Javascript | Project with Javascript | Project with Javascript | Project with Javascript | Project with Javascript | Project with Javascript | Project with Javascript | Project with Javascript | Project with Javascript | Project with Javascript | Project with Javascript | Project with Javascript | Project with Javascript | Project with Javascript | Project with Javascript | Project with Javascript |" direction="right" />
+          <ProjectsJavascript />
+          <TexteAnimationProjects texte="Project with Wordpress | Project with Wordpress | Project with Wordpress | Project with Wordpress | Project with Wordpress | Project with Wordpress | Project with Wordpress | Project with Wordpress | Project with Wordpress | Project with Wordpress | Project with Wordpress | Project with Wordpress | Project with Wordpress | Project with Wordpress | Project with Wordpress | Project with Wordpress | Project with Wordpress | Project with Wordpress | Project with Wordpress | Project with Wordpress |" direction="left" />
+          <ProjectsWordpress />
+          <Footer />
         </div>
       )}
     </>

@@ -1,1 +1,1 @@
-{"version":3,"sources":["ImageScroller.sass","ImageScroller.css"],"names":[],"mappings":"AACA;EACI,gBAAA;EACA,YAAA;ACAJ;;ADEA;EACI,aAAA;ACCJ","file":"ImageScroller.css"}
+{"version":3,"sources":["imageScroller.sass","imageScroller.css"],"names":[],"mappings":"AAAA;EACI,gBAAA;EACA,YAAA;EACA,aAAA;EACA,kBAAA;EACA,sDAAA;EACA,sBAAA;EACA,0CAAA;ACCJ;;ADCA;EACI;IACI,wBAAA;ECEN;EDAE;IACI,8BAAA;ECEN;AACF","file":"imageScroller.css"}
