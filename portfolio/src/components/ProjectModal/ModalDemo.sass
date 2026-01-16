@@ -1,0 +1,62 @@
+.modal-demo
+  min-height: 100vh
+  background: black
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  padding: 40px 20px
+
+  h1
+    font-family: "Hi Melody", cursive
+    font-size: 48px
+    color: white
+    margin: 0 0 10px 0
+    text-align: center
+
+  .demo-subtitle
+    font-family: 'Outfit', sans-serif
+    color: #666
+    font-size: 16px
+    margin: 0 0 40px 0
+
+  .demo-buttons
+    display: flex
+    gap: 20px
+    flex-wrap: wrap
+    justify-content: center
+
+  .demo-btn
+    background: transparent
+    border: 2px solid #333
+    color: white
+    padding: 20px 30px
+    border-radius: 16px
+    cursor: pointer
+    display: flex
+    flex-direction: column
+    align-items: center
+    gap: 8px
+    min-width: 140px
+    transition: all 0.3s
+
+    &:hover
+      border-color: white
+      transform: translateY(-4px)
+      box-shadow: 0 10px 30px rgba(255,255,255,0.1)
+
+    .btn-number
+      font-family: 'Outfit', sans-serif
+      font-size: 32px
+      font-weight: 700
+
+    .btn-label
+      font-family: 'Outfit', sans-serif
+      font-size: 14px
+      color: #888
+
+    &.featured
+      border-color: white
+      background: rgba(255,255,255,0.05)
+      .btn-label
+        color: white

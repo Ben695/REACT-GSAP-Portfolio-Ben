@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import carImage from '@/assets/images/auto.png';
+import carImage from '@/assets/images/auto.webp';
 
 const AutoAnimation: React.FC = () => {
   const [scrollPosition, setScrollPosition] = useState<number>(0);

@@ -1,6 +1,6 @@
 import '@/components/Hero/Hero.sass';
 import SvgAnimation from '@/components/SvgAnimation/SvgAnimation';
-import chapeau from '@/assets/images/chapeau.png';
+import chapeau from '@/assets/images/chapeau.webp';
 import AutoAnimation from '@/components/AutoAnimation/AutoAnimation';
 
 const Hero: React.FC = () => {

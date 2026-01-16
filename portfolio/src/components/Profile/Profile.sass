@@ -1,6 +1,6 @@
 .profile-container
     background: url(../../assets/images/background.png) no-repeat center/cover
-    padding: 50px 0
+    padding: 50px 5%
     display: flex
     justify-content: center
     align-items: center
@@ -9,20 +9,62 @@
 .profile-content
     display: flex
     align-items: center
-    justify-content: center
+    justify-content: flex-start
+    width: 100%
+    max-width: 1400px
+    gap: 60px
     @media (max-width: 920px)
         flex-direction: column
-.profile-image
-    width: 40%
-    display: block
-    max-width: 100%
-    height: auto
+        justify-content: center
+
+// Polaroid Gallery
+.profile-images
+    position: relative
+    width: 500px
+    height: 550px
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-shrink: 0
     @media (max-width: 920px)
-        width: 80%
+        width: 320px
+        height: 380px
+        margin-bottom: 20px
+
+.polaroid-overlay
+    position: fixed
+    inset: 0
+    background: rgba(0, 0, 0, 0.7)
+    z-index: 50
+
+.polaroid
+    position: absolute
+    cursor: pointer
+
+    &.expanded
+        z-index: 100
+
+.polaroid-frame
+    background: white
+    padding: 12px
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3)
+    border-radius: 4px
+
+    img
+        width: 300px
+        height: 380px
+        object-fit: cover
+        display: block
+        border-radius: 2px
+        @media (max-width: 920px)
+            width: 200px
+            height: 250px
+
 .profile-text
-    width: 40%
+    flex: 1
     @media (max-width: 920px)
-        width: 80%
+        width: 90%
+        text-align: center
     h2
         font-size: 96px
         font-weight: 500
@@ -42,16 +84,6 @@
             font-size: 50px
     p
         font-size: 36px
-        font-family: "Hi Melody", cursive
+        font-family: "Indie Flower", cursive
         @media (max-width: 920px)
             font-size: 16px
-
-.hero-title .chapeau-image
-    animation: floating 3s ease-in-out infinite alternate
-
-@keyframes floating
-    0%
-        transform: translateY(-10px)
-
-    100%
-        transform: translateY(10px)

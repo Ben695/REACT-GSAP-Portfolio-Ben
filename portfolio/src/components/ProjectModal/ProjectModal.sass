@@ -1,0 +1,809 @@
+// Base Modal Styles
+.modal-backdrop
+  position: fixed
+  inset: 0
+  background: rgba(0, 0, 0, 0.85)
+  z-index: 1000
+  display: flex
+  justify-content: center
+  align-items: center
+  padding: 20px
+  backdrop-filter: blur(8px)
+
+.modal-container
+  background: #000
+  max-height: 90vh
+  overflow-y: auto
+  position: relative
+
+  &::-webkit-scrollbar
+    width: 6px
+  &::-webkit-scrollbar-track
+    background: #111
+  &::-webkit-scrollbar-thumb
+    background: #333
+    border-radius: 3px
+
+// ==========================================
+// DESIGN 1: Minimal Clean
+// ==========================================
+.modal-container.design-1
+  width: 100%
+  max-width: 900px
+  border-radius: 16px
+  border: 1px solid #222
+
+.modal-header-1
+  display: flex
+  align-items: center
+  justify-content: space-between
+  padding: 20px 24px
+  border-bottom: 1px solid #222
+  position: sticky
+  top: 0
+  background: #000
+  z-index: 10
+
+  h2
+    font-family: "Hi Melody", cursive
+    font-size: 32px
+    margin: 0
+    color: white
+
+  .close-btn-1
+    background: none
+    border: none
+    color: #666
+    cursor: pointer
+    padding: 8px
+    transition: color 0.2s
+    &:hover
+      color: white
+
+  .visit-btn-1
+    display: flex
+    align-items: center
+    gap: 8px
+    background: white
+    color: black
+    padding: 10px 20px
+    border-radius: 8px
+    text-decoration: none
+    font-family: 'Outfit', sans-serif
+    font-weight: 500
+    font-size: 14px
+    transition: transform 0.2s, box-shadow 0.2s
+    &:hover
+      transform: translateY(-2px)
+      box-shadow: 0 4px 12px rgba(255,255,255,0.2)
+
+.modal-content-1
+  padding: 24px
+
+.carousel-1
+  display: flex
+  align-items: center
+  gap: 16px
+
+  .nav-btn-1
+    background: #111
+    border: 1px solid #333
+    color: white
+    width: 48px
+    height: 48px
+    border-radius: 50%
+    cursor: pointer
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-shrink: 0
+    transition: all 0.2s
+    &:hover
+      background: #222
+      border-color: #444
+
+  .screenshot-container-1
+    flex: 1
+    max-height: 500px
+    overflow-y: auto
+    border-radius: 8px
+    border: 1px solid #222
+    &::-webkit-scrollbar
+      width: 4px
+    &::-webkit-scrollbar-thumb
+      background: #444
+      border-radius: 2px
+    img
+      width: 100%
+      display: block
+
+.dots-1
+  display: flex
+  justify-content: center
+  gap: 8px
+  margin-top: 16px
+  .dot
+    width: 10px
+    height: 10px
+    border-radius: 50%
+    background: #333
+    border: none
+    cursor: pointer
+    transition: all 0.2s
+    &.active
+      background: white
+      transform: scale(1.2)
+
+.description-1
+  color: #999
+  font-family: 'Outfit', sans-serif
+  font-size: 16px
+  line-height: 1.6
+  margin-top: 20px
+  text-align: center
+
+// ==========================================
+// DESIGN 2: Split Layout
+// ==========================================
+.modal-container.design-2
+  width: 100%
+  max-width: 1100px
+  border-radius: 20px
+  border: 1px solid #333
+  overflow: hidden
+
+.close-btn-2
+  position: absolute
+  top: 20px
+  right: 20px
+  background: rgba(255,255,255,0.1)
+  border: none
+  color: white
+  width: 44px
+  height: 44px
+  border-radius: 50%
+  cursor: pointer
+  display: flex
+  align-items: center
+  justify-content: center
+  z-index: 10
+  transition: background 0.2s
+  &:hover
+    background: rgba(255,255,255,0.2)
+
+.modal-split-2
+  display: flex
+  min-height: 600px
+  @media (max-width: 768px)
+    flex-direction: column
+
+.left-panel-2
+  width: 350px
+  padding: 40px 30px
+  display: flex
+  flex-direction: column
+  border-right: 1px solid #222
+  @media (max-width: 768px)
+    width: 100%
+    border-right: none
+    border-bottom: 1px solid #222
+
+  h2
+    font-family: "Hi Melody", cursive
+    font-size: 42px
+    color: white
+    margin: 0 0 20px 0
+
+  p
+    font-family: 'Outfit', sans-serif
+    color: #888
+    font-size: 15px
+    line-height: 1.7
+    flex: 1
+
+  .visit-btn-2
+    display: inline-flex
+    align-items: center
+    gap: 12px
+    background: transparent
+    color: white
+    padding: 16px 0
+    text-decoration: none
+    font-family: 'Outfit', sans-serif
+    font-weight: 600
+    font-size: 16px
+    border-top: 1px solid #333
+    margin-top: 20px
+    transition: gap 0.3s
+    .arrow
+      transition: transform 0.3s
+    &:hover
+      gap: 20px
+      .arrow
+        transform: translateX(4px)
+
+  .thumbnails-2
+    display: flex
+    gap: 10px
+    margin-top: 20px
+    .thumb
+      width: 60px
+      height: 60px
+      border-radius: 8px
+      overflow: hidden
+      border: 2px solid transparent
+      cursor: pointer
+      padding: 0
+      background: none
+      transition: border-color 0.2s
+      &.active
+        border-color: white
+      img
+        width: 100%
+        height: 100%
+        object-fit: cover
+
+.right-panel-2
+  flex: 1
+  padding: 20px
+  display: flex
+  align-items: flex-start
+  overflow-y: auto
+  max-height: 600px
+
+  .screenshot-container-2
+    width: 100%
+    img
+      width: 100%
+      border-radius: 12px
+
+// ==========================================
+// DESIGN 3: Full Screen Gallery
+// ==========================================
+.modal-backdrop.design-3
+  padding: 0
+
+.modal-container.design-3
+  width: 100%
+  height: 100%
+  max-width: 100%
+  max-height: 100%
+  border-radius: 0
+  display: flex
+  flex-direction: column
+
+.modal-header-3
+  display: flex
+  justify-content: space-between
+  align-items: center
+  padding: 16px 24px
+  border-bottom: 1px solid #222
+  flex-shrink: 0
+
+  .header-left-3
+    display: flex
+    align-items: center
+    gap: 20px
+    h2
+      font-family: "Hi Melody", cursive
+      font-size: 28px
+      color: white
+      margin: 0
+    .counter-3
+      font-family: 'Outfit', sans-serif
+      color: #666
+      font-size: 14px
+
+  .header-right-3
+    display: flex
+    align-items: center
+    gap: 16px
+
+    .visit-btn-3
+      display: flex
+      align-items: center
+      gap: 8px
+      background: white
+      color: black
+      padding: 10px 20px
+      border-radius: 100px
+      text-decoration: none
+      font-family: 'Outfit', sans-serif
+      font-weight: 500
+      font-size: 14px
+      transition: transform 0.2s
+      &:hover
+        transform: scale(1.05)
+
+    .close-btn-3
+      background: none
+      border: 1px solid #333
+      color: white
+      width: 44px
+      height: 44px
+      border-radius: 50%
+      cursor: pointer
+      display: flex
+      align-items: center
+      justify-content: center
+      transition: all 0.2s
+      &:hover
+        background: #222
+
+.modal-content-3
+  flex: 1
+  display: flex
+  align-items: center
+  padding: 20px
+  gap: 20px
+  overflow: hidden
+
+  .nav-btn-3
+    background: rgba(255,255,255,0.05)
+    border: 1px solid #333
+    color: white
+    width: 56px
+    height: 56px
+    border-radius: 50%
+    cursor: pointer
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-shrink: 0
+    transition: all 0.2s
+    &:hover
+      background: rgba(255,255,255,0.1)
+      border-color: #555
+
+  .screenshot-wrapper-3
+    flex: 1
+    height: 100%
+    overflow-y: auto
+    display: flex
+    justify-content: center
+    &::-webkit-scrollbar
+      width: 6px
+    &::-webkit-scrollbar-thumb
+      background: #333
+      border-radius: 3px
+    img
+      max-width: 800px
+      width: 100%
+      border-radius: 8px
+      border: 1px solid #222
+
+.modal-footer-3
+  padding: 16px 24px
+  border-top: 1px solid #222
+  flex-shrink: 0
+  p
+    font-family: 'Outfit', sans-serif
+    color: #777
+    font-size: 14px
+    margin: 0
+    text-align: center
+    max-width: 800px
+    margin: 0 auto
+
+// ==========================================
+// DESIGN 4: Card Stack
+// ==========================================
+.modal-container.design-4
+  width: 100%
+  max-width: 1000px
+  border-radius: 24px
+  border: 2px solid #333
+  padding: 0
+
+.modal-top-4
+  display: flex
+  justify-content: space-between
+  align-items: center
+  padding: 20px 28px
+  border-bottom: 1px solid #222
+
+  .close-btn-4
+    background: none
+    border: 2px solid #444
+    color: #888
+    width: 40px
+    height: 40px
+    border-radius: 10px
+    cursor: pointer
+    font-size: 18px
+    transition: all 0.2s
+    &:hover
+      border-color: white
+      color: white
+
+  .visit-btn-4
+    color: white
+    text-decoration: none
+    font-family: 'Outfit', sans-serif
+    font-weight: 600
+    font-size: 16px
+    padding: 12px 24px
+    border: 2px solid white
+    border-radius: 10px
+    transition: all 0.2s
+    &:hover
+      background: white
+      color: black
+
+.modal-body-4
+  display: flex
+  gap: 30px
+  padding: 30px
+  @media (max-width: 768px)
+    flex-direction: column
+
+.info-card-4
+  width: 280px
+  background: #111
+  border-radius: 16px
+  padding: 28px
+  flex-shrink: 0
+  @media (max-width: 768px)
+    width: 100%
+
+  h2
+    font-family: "Hi Melody", cursive
+    font-size: 36px
+    color: white
+    margin: 0 0 16px 0
+
+  .divider-4
+    height: 2px
+    background: linear-gradient(90deg, white, transparent)
+    margin-bottom: 16px
+
+  p
+    font-family: 'Outfit', sans-serif
+    color: #999
+    font-size: 14px
+    line-height: 1.7
+    margin: 0
+
+.gallery-4
+  flex: 1
+  display: flex
+  flex-direction: column
+  gap: 16px
+
+  .main-image-4
+    flex: 1
+    max-height: 450px
+    overflow-y: auto
+    border-radius: 12px
+    border: 1px solid #333
+    &::-webkit-scrollbar
+      width: 4px
+    &::-webkit-scrollbar-thumb
+      background: #555
+      border-radius: 2px
+    img
+      width: 100%
+      display: block
+
+  .gallery-nav-4
+    display: flex
+    align-items: center
+    gap: 16px
+
+    .nav-arrow-4
+      background: none
+      border: 2px solid #444
+      color: white
+      width: 44px
+      height: 44px
+      border-radius: 50%
+      cursor: pointer
+      font-size: 18px
+      transition: all 0.2s
+      &:hover
+        border-color: white
+        background: white
+        color: black
+
+    .progress-bar-4
+      flex: 1
+      height: 4px
+      background: #333
+      border-radius: 2px
+      overflow: hidden
+
+      .progress-fill-4
+        height: 100%
+        background: white
+        transition: width 0.3s
+
+// ==========================================
+// DESIGN 5: Mix of 2 & 4 - Split Card
+// ==========================================
+.modal-container.design-5
+  width: 100%
+  max-width: 1100px
+  border-radius: 20px
+  border: 2px solid #333
+  overflow: hidden
+
+.modal-header-5
+  display: flex
+  justify-content: space-between
+  align-items: center
+  padding: 16px 24px
+  border-bottom: 1px solid #222
+  background: #0a0a0a
+
+  .visit-btn-5
+    display: flex
+    align-items: center
+    gap: 10px
+    background: white
+    color: black
+    padding: 12px 24px
+    border-radius: 10px
+    text-decoration: none
+    font-family: 'Outfit', sans-serif
+    font-weight: 600
+    font-size: 14px
+    transition: all 0.2s
+    &:hover
+      transform: translateY(-2px)
+      box-shadow: 0 6px 20px rgba(255,255,255,0.15)
+
+  .close-btn-5
+    background: none
+    border: 2px solid #333
+    color: #666
+    width: 44px
+    height: 44px
+    border-radius: 10px
+    cursor: pointer
+    display: flex
+    align-items: center
+    justify-content: center
+    transition: all 0.2s
+    &:hover
+      border-color: white
+      color: white
+
+.modal-body-5
+  display: flex
+  min-height: 550px
+  @media (max-width: 768px)
+    flex-direction: column
+
+.info-panel-5
+  width: 320px
+  padding: 28px
+  display: flex
+  flex-direction: column
+  background: #0a0a0a
+  border-right: 1px solid #222
+  @media (max-width: 768px)
+    width: 100%
+    border-right: none
+    border-bottom: 1px solid #222
+
+  .info-content-5
+    flex: 1
+
+    h2
+      font-family: "Hi Melody", cursive
+      font-size: 38px
+      color: white
+      margin: 0 0 16px 0
+
+    .divider-5
+      height: 2px
+      width: 60px
+      background: white
+      margin-bottom: 16px
+
+    p
+      font-family: 'Outfit', sans-serif
+      color: #888
+      font-size: 14px
+      line-height: 1.7
+      margin: 0
+
+  .thumbnails-5
+    display: flex
+    gap: 10px
+    margin-top: 24px
+    flex-wrap: wrap
+
+    .thumb-5
+      width: 56px
+      height: 56px
+      border-radius: 10px
+      overflow: hidden
+      border: 2px solid #333
+      cursor: pointer
+      padding: 0
+      background: #111
+      position: relative
+      transition: all 0.2s
+
+      &.active
+        border-color: white
+        .thumb-number
+          background: white
+          color: black
+
+      &:hover
+        border-color: #666
+
+      img
+        width: 100%
+        height: 100%
+        object-fit: cover
+
+      .thumb-number
+        position: absolute
+        bottom: 2px
+        right: 2px
+        background: rgba(0,0,0,0.8)
+        color: white
+        font-family: 'Outfit', sans-serif
+        font-size: 10px
+        font-weight: 600
+        padding: 2px 6px
+        border-radius: 4px
+
+  .progress-section-5
+    display: flex
+    align-items: center
+    gap: 12px
+    margin-top: 20px
+    padding-top: 20px
+    border-top: 1px solid #222
+
+    .progress-bar-5
+      flex: 1
+      height: 3px
+      background: #333
+      border-radius: 2px
+      overflow: hidden
+
+      .progress-fill-5
+        height: 100%
+        background: white
+        transition: width 0.3s ease
+
+    .progress-text-5
+      font-family: 'Outfit', sans-serif
+      color: #666
+      font-size: 12px
+      min-width: 40px
+      text-align: right
+
+.gallery-panel-5
+  flex: 1
+  display: flex
+  align-items: flex-start
+  gap: 12px
+  padding: 20px
+  background: #000
+
+  .nav-btn-5
+    background: #111
+    border: 2px solid #333
+    color: white
+    width: 40px
+    height: 40px
+    border-radius: 50%
+    cursor: pointer
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-shrink: 0
+    margin-top: 20px
+    transition: all 0.2s
+    &:hover
+      background: white
+      border-color: white
+      color: black
+
+  .screenshot-container-5
+    flex: 1
+    max-height: 510px
+    overflow-y: auto
+    border-radius: 12px
+    border: 1px solid #222
+    &::-webkit-scrollbar
+      width: 6px
+    &::-webkit-scrollbar-track
+      background: #111
+    &::-webkit-scrollbar-thumb
+      background: #444
+      border-radius: 3px
+      &:hover
+        background: #555
+    img
+      width: 100%
+      display: block
+
+// Mobile responsive
+@media (max-width: 600px)
+  .modal-header-1
+    flex-wrap: wrap
+    gap: 12px
+    h2
+      order: 2
+      width: 100%
+      font-size: 24px
+    .close-btn-1
+      order: 1
+    .visit-btn-1
+      order: 3
+
+  .carousel-1
+    flex-direction: column
+    .nav-btn-1
+      display: none
+
+  .left-panel-2
+    padding: 24px 20px
+    h2
+      font-size: 32px
+
+  .modal-header-3
+    flex-direction: column
+    gap: 12px
+    align-items: flex-start
+    .header-right-3
+      width: 100%
+      justify-content: space-between
+
+  .modal-content-3 .nav-btn-3
+    display: none
+
+  .modal-body-4
+    padding: 20px
+
+// Design 5 - Mobile responsive (sans galerie d'images)
+@media (max-width: 768px)
+  .modal-backdrop
+    padding: 16px
+
+  .modal-header-5
+    padding: 14px 18px
+    .visit-btn-5
+      padding: 10px 20px
+      font-size: 14px
+    .close-btn-5
+      width: 40px
+      height: 40px
+
+  .modal-body-5
+    min-height: auto
+
+  .info-panel-5
+    width: 100%
+    border-right: none
+    border-bottom: none
+    padding: 20px
+    overflow: hidden
+    .info-content-5
+      h2
+        font-size: 26px
+        word-wrap: break-word
+        overflow-wrap: break-word
+        white-space: normal
+        max-width: 100%
+      p
+        font-size: 14px
+        line-height: 1.6
+
+  // Masquer la galerie sur mobile
+  .gallery-panel-5
+    display: none
+
+  // Masquer les thumbnails et progress sur mobile
+  .thumbnails-5
+    display: none
+
+  .progress-section-5
+    display: none

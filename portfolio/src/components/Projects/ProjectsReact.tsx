@@ -1,33 +1,107 @@
 import LeftProjects from '@/components/LeftProjects/LeftProjects';
 import RightProjects from '@/components/RightProjects/RightProjects';
+import { useLanguage } from '@/i18n';
 
-import ArgenBankImg from '@/assets/images/projects/react/argentBank.png';
-import PortfolioBenImg from '@/assets/images/projects/react/portfolioBen.png';
-import KaisaImg from '@/assets/images/projects/react/kaisa.png';
+// Project main images
+import BullDocImg from '@/assets/images/projects/react/bulldoc.webp';
+import ImageOptimizerImg from '@/assets/images/projects/react/image-optimizer.webp';
+import CoyoteEcommerceImg from '@/assets/images/projects/react/CoyoteE-commerce.webp';
+import OptimmaImg from '@/assets/images/projects/react/optimma-website.webp';
+
+// Screenshots BullDoc
+import bulldocDashboard from '@/assets/images/projects/react/bulldoc/dashboard.webp';
+import bulldocClients from '@/assets/images/projects/react/bulldoc/clients.webp';
+import bulldocClientDetail from '@/assets/images/projects/react/bulldoc/client-detail.webp';
+import bulldocInvoices from '@/assets/images/projects/react/bulldoc/invoices.webp';
+import bulldocSettings from '@/assets/images/projects/react/bulldoc/settings.webp';
+import bulldocAppearance from '@/assets/images/projects/react/bulldoc/appearance.webp';
+
+// Screenshots Image Optimizer
+import imageOptimizerDashboard from '@/assets/images/projects/react/imageoptimizer/dashboard.webp';
+import imageOptimizerOptimization from '@/assets/images/projects/react/imageoptimizer/optimization.webp';
+import imageOptimizerConfig from '@/assets/images/projects/react/imageoptimizer/config.webp';
+import imageOptimizerOnpage from '@/assets/images/projects/react/imageoptimizer/onpage.webp';
+
+// Screenshots Coyote E-commerce
+import coyoteEcommerceHome from '@/assets/images/projects/Wordpress/coyote/coyote-ecommerce/home.webp';
+import coyoteEcommerceProductApp from '@/assets/images/projects/Wordpress/coyote/coyote-ecommerce/product-app.webp';
+import coyoteEcommerceProductSecure from '@/assets/images/projects/Wordpress/coyote/coyote-ecommerce/product-secure.webp';
+import coyoteEcommerceServices from '@/assets/images/projects/Wordpress/coyote/coyote-ecommerce/services.webp';
+
+// Screenshots Optimma
+import optimmaDashboard from '@/assets/images/projects/react/optimma/dashboard.webp';
+import optimmaFaq from '@/assets/images/projects/react/optimma/faq.webp';
+import optimmaQuestionnaire from '@/assets/images/projects/react/optimma/questionnaire.webp';
+import optimmaQuestionnaireDetail from '@/assets/images/projects/react/optimma/questionnaire-detail.webp';
+import optimmaVisite from '@/assets/images/projects/react/optimma/visite.webp';
+
+const bulldocScreenshots = [
+  bulldocDashboard,
+  bulldocClients,
+  bulldocClientDetail,
+  bulldocInvoices,
+  bulldocSettings,
+  bulldocAppearance,
+];
+
+const imageOptimizerScreenshots = [
+  imageOptimizerDashboard,
+  imageOptimizerOptimization,
+  imageOptimizerConfig,
+  imageOptimizerOnpage,
+];
+
+const coyoteEcommerceScreenshots = [
+  coyoteEcommerceHome,
+  coyoteEcommerceProductApp,
+  coyoteEcommerceProductSecure,
+  coyoteEcommerceServices,
+];
+
+const optimmaScreenshots = [
+  optimmaDashboard,
+  optimmaFaq,
+  optimmaQuestionnaire,
+  optimmaQuestionnaireDetail,
+  optimmaVisite,
+];
 
 const ProjectsReact = () => {
+  const { t } = useLanguage();
+
   return (
     <div>
       <LeftProjects
-        imageUrl={ArgenBankImg}
-        title="Argent Bank"
-        description="Argent Bank is a sleek web app designed for easy online banking. It uses Node.js for its behind-the-scenes magic and React for a smooth, interactive experience. This app lets you safely sign in, manage your profile, and get ready to handle money transactions. It's all about making bank account management straightforward and secure. With Argent Bank, checking your transactions, updating your info, or just keeping tabs on your account is a breeze, supported by detailed API docs for any tech-savvy users interested in the nuts and bolts."
-        buttonText="Discover it on Github"
-        buttonUrl="https://github.com/Ben695/Argent-Bank"
+        imageUrl={BullDocImg}
+        title={t.projects.bulldoc.title}
+        description={t.projects.bulldoc.description}
+        buttonText={t.projects.bulldoc.buttonText}
+        buttonUrl={t.projects.bulldoc.buttonUrl}
+        screenshots={bulldocScreenshots}
       />
       <RightProjects
-        imageUrl={KaisaImg}
-        title="Kasa"
-        description="Kasa is an innovative web app for real estate rentals, made simple and dynamic with React. This platform enables smooth navigation through a variety of rental offerings, aiming to ease the search for accommodations. Kasa features an intuitive user interface, filters to refine your search, detailed pages for each property, and a straightforward booking process. Designed to be enjoyable on all types of devices, Kasa ensures a pleasant experience from start to finish. The project leverages React for the user interface, React Router for navigation, Sass for styling, and JSON to manage the property listings, ensuring a modern and efficient platform."
-        buttonText="Discover it on Github"
-        buttonUrl="https://github.com/Ben695/Kaisa"
+        imageUrl={ImageOptimizerImg}
+        title={t.projects.imageOptimizer.title}
+        description={t.projects.imageOptimizer.description}
+        buttonText={t.projects.imageOptimizer.buttonText}
+        buttonUrl={t.projects.imageOptimizer.buttonUrl}
+        screenshots={imageOptimizerScreenshots}
       />
       <LeftProjects
-        imageUrl={PortfolioBenImg}
-        title="Portfolio"
-        description="My portfolio is a creative web showcase built with React, TypeScript, GSAP, and Framer Motion. It highlights my journey and projects as a developer with a passion for design, even as I grow my skills in this area. The combination of React and TypeScript ensures a solid, smooth user experience, while GSAP and Framer Motion bring interactive animations that make the site visually engaging. Designed to stand out through its creativity, this portfolio reflects my venture into blending coding with design, showcasing my evolving development and design passion."
-        buttonText="Discover it on Github"
-        buttonUrl="https://github.com/Ben695/REACT-GSAP-Portfolio-Ben/tree/main/portfolio"
+        imageUrl={CoyoteEcommerceImg}
+        title={t.projects.coyoteEcommerce.title}
+        description={t.projects.coyoteEcommerce.description}
+        buttonText={t.projects.coyoteEcommerce.buttonText}
+        buttonUrl={t.projects.coyoteEcommerce.buttonUrl}
+        screenshots={coyoteEcommerceScreenshots}
+      />
+      <RightProjects
+        imageUrl={OptimmaImg}
+        title={t.projects.optimma.title}
+        description={t.projects.optimma.description}
+        buttonText={t.projects.optimma.buttonText}
+        buttonUrl={t.projects.optimma.buttonUrl}
+        screenshots={optimmaScreenshots}
       />
     </div>
   );

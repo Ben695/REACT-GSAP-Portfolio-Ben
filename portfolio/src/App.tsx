@@ -11,30 +11,32 @@ import Preloader from './components/Preloader/Preloader';
 import ProgressBar from './components/ProgressBar/ProgressBar';
 import ProjectsReact from './components/Projects/ProjectsReact';
 import TexteAnimationProjects from '@/components/TexteAnimationProjects/TexteAnimationProjects';
-import ProjectsJavascript from './components/Projects/ProjectsJavascript';
 import Footer from './components/Footer/Footer';
 import ProjectsWordpress from './components/Projects/ProjectsWordpress';
-
+import Skills from './components/Skills/Skills';
+import { useLanguage } from '@/i18n';
 
 const App: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
+  const { t } = useLanguage();
 
   useEffect(() => {
-    // Simuler le chargement des ressources
     setTimeout(() => setIsLoading(false), 2000);
   }, []);
 
   useEffect(() => {
     if (!isLoading) {
-      // Animer chaque élément séparément en utilisant ses classes spécifiques
-      gsap.fromTo('.header-anim', 
-                  { y: -30, autoAlpha: 0 }, 
-                  { y: 0, autoAlpha: 1, duration: 1, ease: 'power3.out' });
-      gsap.fromTo('.hero-anim', 
-                  { y: -30, autoAlpha: 0 }, 
-                  { y: 0, autoAlpha: 1, duration: 1, ease: 'power3.out', delay: 0.2 });
+      gsap.fromTo('.header-anim',
+        { y: -30, autoAlpha: 0 },
+        { y: 0, autoAlpha: 1, duration: 1, ease: 'power3.out' });
+      gsap.fromTo('.hero-anim',
+        { y: -30, autoAlpha: 0 },
+        { y: 0, autoAlpha: 1, duration: 1, ease: 'power3.out', delay: 0.2 });
     }
   }, [isLoading]);
+
+  const reactText = `${t.sections.reactProjects} | `.repeat(40);
+  const wordpressText = `${t.sections.wordpressProjects} | `.repeat(40);
 
   return (
     <>
@@ -47,12 +49,11 @@ const App: React.FC = () => {
           <Hero />
           <Profile />
           <ImageScroller />
-          <TexteAnimationProjects texte="Project with React | Project with React | Project with React | Project with React | Project with React | Project with React | Project with React | Project with React | Project with React | Project with React | Project with React | Project with React | Project with React | Project with React | Project with React | Project with React | Project with React | Project with React | Project with React | Project with React |" direction="left" />
+          <TexteAnimationProjects texte={reactText} direction="left" />
           <ProjectsReact />
-          <TexteAnimationProjects texte="Project with Javascript | Project with Javascript | Project with Javascript | Project with Javascript | Project with Javascript | Project with Javascript | Project with Javascript | Project with Javascript | Project with Javascript | Project with Javascript | Project with Javascript | Project with Javascript | Project with Javascript | Project with Javascript | Project with Javascript | Project with Javascript | Project with Javascript | Project with Javascript | Project with Javascript | Project with Javascript |" direction="right" />
-          <ProjectsJavascript />
-          <TexteAnimationProjects texte="Project with Wordpress | Project with Wordpress | Project with Wordpress | Project with Wordpress | Project with Wordpress | Project with Wordpress | Project with Wordpress | Project with Wordpress | Project with Wordpress | Project with Wordpress | Project with Wordpress | Project with Wordpress | Project with Wordpress | Project with Wordpress | Project with Wordpress | Project with Wordpress | Project with Wordpress | Project with Wordpress | Project with Wordpress | Project with Wordpress |" direction="left" />
+          <TexteAnimationProjects texte={wordpressText} direction="right" />
           <ProjectsWordpress />
+          <Skills />
           <Footer />
         </div>
       )}
