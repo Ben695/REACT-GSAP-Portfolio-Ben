@@ -34,7 +34,7 @@ export const translations = {
       coyoteEcommerce: {
         title: "Coyote E-commerce",
         description:
-          "Intégré à l'équipe front-end de Coyote pour la refonte complète de leur plateforme e-commerce. On a tout reconstruit et déployé sur 6 pays : France, Belgique, Belgique NL, Italie, Luxembourg et Espagne. Mon rôle : optimiser les performances, développer des composants réutilisables et améliorer le tunnel d'achat.",
+          "Intégré à l'équipe front-end de Coyote pour la refonte complète de leur plateforme e-commerce. Refonte et déploiement sur 6 pays : France, Belgique, Belgique NL, Italie, Luxembourg et Espagne. Mon rôle : optimiser les performances, développer des composants réutilisables et améliorer le tunnel d'achat.",
         buttonText: "En savoir plus",
         buttonUrl: "https://www.moncoyote.com/fr/",
       },
@@ -125,7 +125,7 @@ export const translations = {
       coyoteEcommerce: {
         title: "Coyote E-commerce",
         description:
-          "Joined Coyote's front-end team for the complete redesign of their e-commerce platform. We rebuilt everything and deployed across 6 countries: France, Belgium, Belgium NL, Italy, Luxembourg and Spain. My role: optimize performance, build reusable components and improve the checkout flow.",
+          "Joined Coyote's front-end team for the complete redesign of their e-commerce platform. Redesign and deployment across 6 countries: France, Belgium, Belgium NL, Italy, Luxembourg and Spain. My role: optimize performance, build reusable components and improve the checkout flow.",
         buttonText: "Learn more",
         buttonUrl: "https://www.moncoyote.com/fr/",
       },
