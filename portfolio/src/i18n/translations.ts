@@ -3,7 +3,7 @@ export const translations = {
     // Profile
     profile: {
       title1: "Développeur",
-      title2: "Full-Stack",
+      title2: "",
       description:
         "4 ans à transformer des idées en produits qui marchent. Des SaaS, des PWA, des sites WordPress qui convertissent. Le reste du temps ? Entre deux sprints, je file à l'eau ou à la montagne.",
     },
@@ -93,8 +93,8 @@ export const translations = {
   en: {
     // Profile
     profile: {
-      title1: "Full-Stack",
-      title2: "Developer",
+      title1: "Developer",
+      title2: "",
       description:
         "4 years turning ideas into products that work. SaaS platforms, PWAs, WordPress sites that convert. The rest of the time? Between sprints, I hit the waves or the slopes.",
     },
