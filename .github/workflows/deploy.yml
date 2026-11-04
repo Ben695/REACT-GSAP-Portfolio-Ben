@@ -1,0 +1,85 @@
+name: Build portfolio for Coolify
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: portfolio
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: portfolio/package-lock.json
+      - name: Install dependencies
+        run: npm ci
+      - name: Build site
+        run: npm run build
+      - name: Check deployable output
+        run: |
+          test -s dist/index.html
+          test -s dist/og-image.webp
+      - name: Save production build
+        if: github.ref == 'refs/heads/main' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
+        uses: actions/upload-artifact@v4
+        with:
+          name: site-${{ github.sha }}
+          path: portfolio/dist/
+          if-no-files-found: error
+          retention-days: 7
+
+  publish:
+    needs: build
+    if: github.ref == 'refs/heads/main' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    concurrency:
+      group: deploy-coolify-portfolio
+      cancel-in-progress: false
+    steps:
+      - name: Checkout publisher
+        uses: actions/checkout@v4
+        with:
+          path: source
+      - name: Download verified build
+        uses: actions/download-artifact@v4
+        with:
+          name: site-${{ github.sha }}
+          path: dist/
+      - name: Publish build for prodweb
+        env:
+          SOURCE_SHA: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+          test -s dist/index.html
+          test -s dist/og-image.webp
+          release_dir="$(mktemp -d)"
+          trap 'rm -rf "$release_dir"' EXIT
+          python3 source/scripts/make-deploy-manifest.py dist "$SOURCE_SHA" "$GITHUB_RUN_ID" "$GITHUB_RUN_ATTEMPT" > "$release_dir/DEPLOY-MANIFEST.json"
+          git init -q "$release_dir"
+          cp -a dist/. "$release_dir/"
+          git -C "$release_dir" config user.name 'github-actions[bot]'
+          git -C "$release_dir" config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git -C "$release_dir" config http.https://github.com/.extraheader "$(git -C source config --get http.https://github.com/.extraheader)"
+          git -C "$release_dir" add -A
+          git -C "$release_dir" commit -qm "Build $SOURCE_SHA for prodweb"
+          git -C "$release_dir" remote add origin "https://github.com/$GITHUB_REPOSITORY.git"
+          git -C "$release_dir" push --force origin HEAD:refs/heads/deploy-coolify
